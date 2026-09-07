@@ -57,15 +57,15 @@
                     <p>Through rigorous training and unwavering commitment, I've earned multiple medals at prestigious AAU competitions. From national championships and district qualifiers to state opens and festival tournaments, I continually strive to improve and compete at higher levels while representing my team with pride.</p>
                     <div class="about-stats">
                         <div class="stat-box">
-                            <h3>5</h3>
+                            <h3 id="majorCount">0</h3>
                             <p>Major Medals</p>
                         </div>
                         <div class="stat-box">
-                            <h3>2</h3>
+                            <h3 id="goldCount">0</h3>
                             <p>Gold Medals</p>
                         </div>
                         <div class="stat-box">
-                            <h3>Green</h3>
+                            <h3 id="beltRank">Green</h3>
                             <p>Belt Rank</p>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                     <div class="achievement-content">
                         <h3>Gold Medal</h3>
                         <p class="achievement-title">AAU Nationals 2026</p>
-                        <p class="achievement-detail">10-11 Female Novice Division</p>
+                        <p class="achievement-detail">July 2026 — 10-11 Female Novice Division</p>
                         <span class="achievement-tag">National Championship</span>
                     </div>
                 </div>
@@ -108,6 +108,54 @@
                         <p class="achievement-title">AAU Southern Pacific District Qualifiers 2026</p>
                         <p class="achievement-detail">Regional Championship</p>
                         <span class="achievement-tag">District Qualifiers</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card gold">
+                    <div class="medal-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Gold Medal</h3>
+                        <p class="achievement-title">CTU California State Open</p>
+                        <p class="achievement-detail">August 2026 — State Open Competition</p>
+                        <span class="achievement-tag">CTU California State Open</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card gold">
+                    <div class="medal-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Gold Medal</h3>
+                        <p class="achievement-title">Han Maum Festival</p>
+                        <p class="achievement-detail">09/05/2026 — Festival Competition</p>
+                        <span class="achievement-tag">Han Maum Festival</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card gold">
+                    <div class="medal-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Gold Medal</h3>
+                        <p class="achievement-title">Han Maum Festival</p>
+                        <p class="achievement-detail">09/05/2026 — Festival Competition</p>
+                        <span class="achievement-tag">Han Maum Festival</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card silver">
+                    <div class="medal-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Silver Medal</h3>
+                        <p class="achievement-title">Golden State Open 2026</p>
+                        <p class="achievement-detail">State-Level Competition</p>
+                        <span class="achievement-tag">State Open</span>
                     </div>
                 </div>
 
@@ -126,18 +174,6 @@
                 <!-- 2025 Achievements -->
                 <div class="achievement-year">
                     <h3>2025</h3>
-                </div>
-
-                <div class="achievement-card silver">
-                    <div class="medal-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <div class="achievement-content">
-                        <h3>Silver Medal</h3>
-                        <p class="achievement-title">Golden State Open 2025</p>
-                        <p class="achievement-detail">State-Level Competition</p>
-                        <span class="achievement-tag">State Open</span>
-                    </div>
                 </div>
 
                 <div class="achievement-card silver">
@@ -257,6 +293,22 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Recalculate medal counts automatically from achievement cards
+        function recalcMedalCounts(){
+            const total = document.querySelectorAll('.achievement-card').length;
+            const gold = document.querySelectorAll('.achievement-card.gold').length;
+            // Update counts in About stats
+            const majorEl = document.getElementById('majorCount');
+            const goldEl = document.getElementById('goldCount');
+            if(majorEl) majorEl.textContent = total;
+            if(goldEl) goldEl.textContent = gold;
+        }
+        document.addEventListener('DOMContentLoaded', function(){
+            recalcMedalCounts();
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>
